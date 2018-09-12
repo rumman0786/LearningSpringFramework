@@ -3,11 +3,11 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'war'
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: "org.akhikhl.gretty"
 
 gretty {
-    port = 8080
-    contextPath = '/'
+    httpPort = 8088
+    contextPath = 'spring'
     servletContainer = 'jetty9'
 }
 
@@ -17,21 +17,19 @@ repositories {
     jcenter()
 }
 
-gretty {
-    port = 8080
-    contextPath = '/'
-    servletContainer = 'jetty9'
-}
-
 buildscript {
     repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+
         jcenter()
         // enable this to use snapshot versions of Gretty:
         // maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
     }
 
     dependencies {
-        classpath 'org.akhikhl.gretty:gretty:+'
+        classpath "gradle.plugin.org.akhikhl.gretty:gretty:2.0.0"
     }
 }
 
@@ -50,6 +48,4 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-beans', version: '5.0.9.RELEASE'
     compile group: 'org.springframework', name: 'spring-context', version: '5.0.9.RELEASE'
     compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.9.RELEASE'
-
-    classpath 'org.akhikhl.gretty:gretty:+'
 }
