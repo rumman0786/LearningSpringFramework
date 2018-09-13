@@ -1,5 +1,7 @@
 package module.hello;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,11 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @since 9/10/18
  */
 @Controller
-@RequestMapping("/hello")
 public class HelloController {
 
-    @GetMapping
+    private static final Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
+
+    @GetMapping(value = "/")
     public String hello() {
+        LOGGER.debug("hello() hitting the controller");
         return "index";
     }
 }
