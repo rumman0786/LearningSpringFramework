@@ -57,7 +57,8 @@ dependencies {
     compile group: 'org.sitemesh', name: 'sitemesh', version: '3.0.1'
 
     compile group: 'javax.validation', name: 'validation-api', version: '2.0.0.Final'
-    compile group: 'org.hibernate', name: 'hibernate-validator', version: '4.2.0.Final'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.3.6.Final'
+
 
     compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.0.7.Final'
