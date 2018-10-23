@@ -11,11 +11,17 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-<context:component-scan  base-package="module.hello" />
+<context:component-scan base-package="module.hello, module.export" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/jsp/" />
         <property name="suffix" value=".jsp" />
+    </bean>
+
+
+    <bean id="excelViewResolver1" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="order" value="1"/>
+        <property name="basename" value="views"/>
     </bean>
 
     <mvc:resources mapping="/resources/**" location="/resources/" />

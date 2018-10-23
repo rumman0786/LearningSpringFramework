@@ -68,4 +68,6 @@ dependencies {
 
     compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
 
+    compile group: 'org.apache.poi', name: 'poi', version: '4.0.0'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.0.0'
 }
