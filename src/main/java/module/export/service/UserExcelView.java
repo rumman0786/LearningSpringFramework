@@ -2,7 +2,6 @@ package module.export.service;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.view.document.AbstractXlsView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,12 +32,13 @@ public class UserExcelView extends AbstractXlsView {
         header.createCell(3).setCellValue("Date");
 
 
-        int rowNum = 1;
+        rowCount += 1;
+
         Row body = sheet.createRow(rowCount++);
-        body.createCell(0).setCellValue("Dummy" + rowNum);
-        body.createCell(1).setCellValue("Dummy" + rowNum);
-        body.createCell(2).setCellValue("Dummy" + rowNum);
-        body.createCell(3).setCellValue("Dummy" + rowNum);
+        body.createCell(0).setCellValue("Dummy" + rowCount);
+        body.createCell(1).setCellValue("Dummy" + rowCount);
+        body.createCell(2).setCellValue("Dummy" + rowCount);
+        body.createCell(3).setCellValue("Dummy" + rowCount);
 
         response.setHeader("Content-Disposition", "attachment; filename=forex-rates.xls");
     }

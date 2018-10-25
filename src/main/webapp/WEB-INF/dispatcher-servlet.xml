@@ -2,7 +2,6 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -19,9 +18,8 @@
     </bean>
 
 
-    <bean id="excelViewResolver1" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+    <bean id="excelViewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
         <property name="order" value="1"/>
-        <property name="basename" value="views"/>
     </bean>
 
     <mvc:resources mapping="/resources/**" location="/resources/" />
